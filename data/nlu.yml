@@ -1,0 +1,360 @@
+version: "2.0"
+
+nlu:
+
+- intent: loan
+  examples: |
+    - Empréstimo
+    - Valor do empréstimo
+    - empréstimo
+    - Valor do emprestimo
+
+- intent: term
+  examples: |
+    - Prazo
+    - parcelas
+    - meses
+    - quantidade de parcelas
+    - prazo para pagamento
+
+- intent: name
+  examples: |
+    - Nome
+    - meu nome
+    - meu nome completo
+    - nome completo
+
+- intent: cpf
+  examples: |
+    - Cpf
+    - cadastro de pessoa física
+    - meu cpf
+
+- intent: marital_status_data
+  examples: |
+    - Estado civil
+    - estado civil
+    - o estado civil
+
+- intent: birth_date
+  examples: |
+    - Data de nascimento
+    - minha data do nascimento
+    - a data do nascimento
+    - nascimento
+
+- intent: occupation_data
+  examples: |
+    - Ocupação
+    - Função
+    - ocupacao
+    - ocupação
+
+- intent: phone_number
+  examples: |
+    - Número de telefone
+    - Telefone
+    - telefone
+    - celular
+    - contato de telefone
+
+- intent: email
+  examples: |
+    - Email
+    - email
+    - e-mail
+
+- synonym: carro
+  examples: |
+    - veículo
+    - automóvel
+
+- intent: greet
+  examples: |
+    - oi
+    - boa tarde
+    - bom dia
+    - bom dia
+    - olá
+    - OI
+    - Oi
+    - Bom dia
+    - BOM DIA
+    - BOA TARDE
+    - olaaa
+    - olar
+    - Bom dia
+    - Boa tarde
+ 
+- intent: goodbye
+  examples: |
+    - Tchau
+    - Quero sair
+    - Não quero falar com você
+    - Adeus
+    - sai daqui
+    - tchau
+    - bye
+    - bye bye
+
+- intent: affirm
+  examples: |
+    - sim
+    - ss
+    - exato
+    - exatamente
+    - isso
+    - claro!
+    - SIM
+    - Sim
+    - lógico
+    - correto
+    - afirmativo
+    - positivo
+    - corretissímo
+    - s
+    - tenho
+    - Tenho
+    - possuo
+    - posuo
+    - é
+    - yes
+
+
+- intent: deny
+  examples: |
+    - não
+    - Não
+    - n
+    - errado
+    - NÃO
+    - incorreto
+    - negativo
+    - nunca
+    - jamais
+    - nn
+    - nãonão
+    - nao
+
+- intent: how_loan_works
+  examples: |
+    - Como funciona o empréstimo?
+    - quero saber como funciona um empréstimo
+    - Poderia me explicar como funciona o empréstimo
+    - Gostaria de saber como pegar dinheiro emprestado
+    - Como que funciona o empréstimo de vocês
+    - gostaria de saber como funciona esse empréstimo
+
+- intent: about_fees
+  examples: |
+    - Até quanto eu posso contratar e quais são as taxas?
+    - quais são as taxas
+    - quanto eu posso pegar emprestado
+    - qual o valor máximo do empréstimo?
+    - qual o valor do contrato do empréstimo?
+    - quanto eu posso conseguir de empréstimo?
+    - quais as taxas do empréstimo?
+    - gostaria de saber quais são as taxas
+    - quais são as taxas para o empréstimo?
+    - me fale sobre as taxas
+    - quero saber um pouco sobre as taxas
+    - me conta sobre as taxas, Maria
+    - gostaria de saber mais sobre sobre as taxas
+
+- intent: atecipate_quota
+  examples: |
+    - O que acontece se eu antecipar as parcelas?
+    - Posso antecipar as parcelas?
+    - Como antecipo as parcelas do empréstimo?
+    - como faço para antecipar parcelas?
+    - quero antecipar as parcelas
+    - oi Maria, gostaria de antecipar as parcelas
+    - Quero antecipar as parcelas
+
+- intent: delay_quota
+  examples: |
+    - acontece o que se eu atrasar parcelas?
+    - Tenho parcelas atrasadas
+    - o que faço? atrasei uma parcela
+    - atrasei minhas parcelas e agora?
+    - e se eu atrasar minahs parcelas?
+    - O que acontece se pagar atrasado?
+    - tem juros para atraso no pagamento?
+
+- intent: cancel_loan
+  examples: |
+    - Como eu cancelo meu empréstimo?
+    - Gostaria de cancelar meu empréstimo
+    - cancelar empréstimo
+    - como faço para cancelar meu empréstimo
+    - quero cancelar meu empréstimo
+    - Cancelamento do empréstimo
+
+- intent: alter_loan
+  examples: |
+    - Posso alterar o valor do meu empréstimo?
+    - Como faço para alterar o valor do meu empréstimo?
+    - quero mudar o valor emprestado
+    - gostaria de modificar meu empréstimo
+    - tem como mudar o valor emprestado?
+    - Quero fazer a modificação do meu empréstimo
+
+- intent: alter_date
+  examples: |
+    - Posso alterar a data de vencimento das parcelas?
+    - Como altero o de vencimento das parcelas
+    - Não poderei pagar no vencimento gostaria de alterar a data
+    - Quero alterar a data do vencimento, é póssivel?
+    - Posso alterar adata do vencimento do meu pagamento
+    - Quero mudar a data do vencimento das parcelas
+
+- intent: loan_options
+  examples: |
+    - Qual a diferença entre o empréstimo pessoal online e o empréstimo com garantia de carro?
+    - Qual a diferença entre os empréstimos?
+    - quais empréstimos posso fazer?
+    - Vocês oferecem quais opções de empréstimo?
+    - quais opções para empréstimo estão disponiveis
+    - vocês fazem empréstimo com garantia?
+    - Vocês só fazem empréstimo com garantia?
+
+- intent: personal_loan
+  examples: |
+    - Empréstimo pessoal
+    - emprestimo pessoal
+    - emprestimo sem garantia
+    - empréstimo sem garantia
+    - Empréstimo consignado
+
+- intent: property_loan
+  examples: |
+    - Me explica sobre o empréstimo com garantia de imóvel
+    - Empréstimo com garantia de imóvel
+    - empréstimo com casa como garantia
+    - empréstimo com casa
+    - refinanciamento de imóvel
+    - refinanciamento de moradia
+    - como funciona o refinanciamneto de reidência
+
+- intent: car_loan
+  examples: |
+    - Me explica sobre o empréstimo com garantia de carro
+    - Empréstimo com garantia de carro
+    - empréstimo por carro
+    - Como funciona empréstimo por carro
+    - Me explica melhor empréstimo por carro
+
+- intent: cet_iof_tax
+  examples: |
+    - O que é CET e taxa IOF?
+    - o que CET?
+    - pode me explicar o que é CET
+    - me fala o queé IOF
+    - me explica melhor o que IOF
+    - o que é iof
+    - o que é cet? você sabe?
+    - Eu não sei o que é IOF
+    - você sabe o que é CET?
+
+- intent: loan_for_negative
+  examples: |
+    - Fazem empréstimo para negativado?
+    - Estou negativado, consigo um empréstimo?
+    - Vocês emprestam pra negativados?
+    - Quero um empréstimo e estou negativado
+    - estou negativado e gostaria de um empréstimo
+
+- intent: renegotiate_debts
+  examples: |
+    - Como renegociar dívidas
+    - Gostaria de renogociar dívidas
+    - Como faço para renegociar dívidas
+    - tenho dividas e gostaria de negociar
+    - como negociar minhas dívidas
+    - tenho dívidas para negociar
+    - Quero renegociar minhas dívidas
+
+- intent: special_check_debts
+  examples: |
+    - Como se livrar das dívidas do cheque especial?
+    - Você tem dicas para quem está no cheque especial?
+    - estou no cheque especial
+    - preciso de ajuda, estou no cheque especial
+    - Cheque especial
+    - Maria você tem dicas para sair do cheque especial?
+
+- intent: credit_card_debts
+  examples: |
+    - Como sair das dívidas de cartão de crédito
+    - tenho muitas dívidas de cartão de crédito
+    - Cartão de crédito
+    - Dívidas no cartão de crédito
+    - Como me livrar das dívidas dos cartões de crédito?
+
+- intent: debts
+  examples: |
+    - Dicas para lidar com dívidas
+    - Como me livrar das dívidas
+    - Maria, você tem dicas para endividados
+    - tem dicas para dívidas?
+    - iai maria? tem alguma dica para dívidas?
+    - gostaria de umas dicas para sair das dívidas
+
+- intent: simulate_loan
+  examples: |
+    - quero um empréstimo
+    - gostaria de um emprestimo
+    - Simular empréstimo
+    - Queria simular um emprestimo
+    - Quero simular meu empréstimo
+    - Quanto eu consigo emprestado
+    - quero fazer uma simulação
+    - quero pegar 
+
+- intent: talk_to_human
+  examples: |
+    - Quero falar com um humano
+    - Quero falar com atendente
+    - sair
+    - falar com humano
+    - quero sair
+    - não quero falar com você
+    - quero falar com o service desk
+
+- intent: marital_status
+  examples: |
+    - [Solteriro(a)](marital_status)
+    - [Solterira](marital_status)
+    - [Solteriro](marital_status)
+    - [Casado(a)](marital_status)
+    - [Casada](marital_status)
+    - [Casado](marital_status)
+    - [Divorciado(a)](marital_status)
+    - [Divorciado](marital_status)
+    - [Divorciada](marital_status)
+    - [Viúvo(a)](marital_status)
+    - [Viúvo](marital_status)
+    - [Viúva](marital_status)
+
+- intent: occupation
+  examples: |
+    - Funcionário Público
+    - Funcionária Público
+    - Assalariado(CLT)
+    - Assalariada(CLT)
+    - Assalariado
+    - Assalariada
+    - CLT
+    - Autônoma
+    - Autônomo
+    - Empresário ou PJ
+    - Empresário
+    - Empresária
+    - PJ
+    - Profissional Liberal
+    - Aposentado ou Pensionista
+    - Aposentado
+    - Pensionista
+    - Aposentada
+    - Desempregado
+    - Desempregada

@@ -1,0 +1,362 @@
+version: "2.0"
+
+actions:
+  - action_welcome
+  - action_confidence_fallback
+  - validate_simulate_personal_loan_form
+  - validate_simulate_property_loan_form
+  - validate_simulate_car_loan_form
+  - validate_simulate_loan_form
+  - action_clean_loan
+  - action_clean_term
+  - action_clean_name
+  - action_clean_cpf
+  - action_clean_email
+  - action_clean_marital_status
+  - action_clean_birth_date
+  - action_clean_occupation_data
+  - action_clean_phone_number
+  - action_clean_personal_loan
+  - action_clean_property_loan
+  - action_clean_personal_loan_term
+  - action_clean_property_loan_term
+  - action_clean_car_loan
+  - action_clean_car_loan_term
+entities:
+  - marital_status
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - how_loan_works
+  - about_fees
+  - atecipate_quota
+  - delay_quota
+  - cancel_loan
+  - alter_loan
+  - alter_date
+  - loan_options
+  - cet_iof_tax
+  - loan_for_negative
+  - renegotiate_debts
+  - special_check_debts
+  - credit_card_debts
+  - debts
+  - simulate_loan
+  - talk_to_human
+  - property_loan
+  - personal_loan
+  - car_loan
+  - marital_status
+  - occupation
+  - loan
+  - term
+  - name
+  - cpf
+  - marital_status_data
+  - birth_date
+  - occupation_data
+  - phone_number
+  - email
+
+slots:
+  msg:
+    type: text
+    influence_conversation: true
+  car_loan:
+    type: text
+    influence_conversation: true
+  car_loan_term:
+    type: text
+    influence_conversation: true
+  personal_loan:
+    type: text
+    influence_conversation: true
+  personal_loan_term:
+    type: text
+    influence_conversation: true
+  property_loan:
+    type: text
+    influence_conversation: true
+  property_loan_term:
+    type: text
+    influence_conversation: true
+  name:
+    type: text
+    influence_conversation: true
+  cpf:
+    type: text
+    influence_conversation: true
+  marital_status:
+    type: text
+    influence_conversation: true
+  birth_date:
+    type: text
+    influence_conversation: true
+  occupation:
+    type: text
+    influence_conversation: true
+  phone_number:
+    type: text
+    influence_conversation: true
+  email:
+    type: text
+    influence_conversation: true
+  user_feedback:
+    type: categorical
+    values:
+      - amei
+      - bom
+      - regular
+      - não gostei
+      - péssimo
+    influence_conversation: true
+
+responses:
+  utter_default:
+  - text: "Eu não sei se consigo responder o que você disse, que tal perguntar de outra forma?"
+  - text: "Acho que não consegui entender  direito. Posso te ajudar com um desses tópicos:"
+    buttons:
+    - title: Como funciona o empréstimo
+      payload: Como funciona o empréstimo
+    - title: Até quanto eu posso contratar e quais são as taxas?
+      payload: Até quanto eu posso contratar e quais são as taxas?
+    - title: O que acontece se eu antecipar parcelas?
+      payload: O que acontece se eu antecipar parcelas?
+    - title: Atrasei algumas parcelas, e agora?
+      payload: Atrasei algumas parcelas, e agora?
+    - title: Como eu cancelar meu empréstimo
+      payload: Como eu cancelar meu empréstimo
+    - title: Posso alterar o valor do meu empréstimo?
+      payload: Posso alterar o valor do meu empréstimo?
+    - title: Quais opções para empréstimo estão disponíveis
+      payload: Quais opções para empréstimo estão disponíveis
+    - title: O que é CET e taxa IOF?
+      payload: O que é CET e taxa IOF?
+    - title: Fazem empréstimo para negativados?
+      payload: Fazem empréstimo para negativados?
+    - title: Quero simular meu empréstimo
+      payload: Quero simular meu empréstimo
+    - title: Dicas para lidar com dívidas
+      payload: Dicas para lidar com dívidas
+    - title: Quero falar com um humano
+      payload: Quero falar com um humano
+  utter_debts:
+  - text: "Tenho dicas para te ajudar a fugir das dívidas, com qual delas posso te ajudar?"
+    buttons:
+    - title: Como renegociar dívidas
+      payload: Como renegociar dívidas
+    - title: Como se livrar das dívidas do cheque especial
+      payload: Como se livrar das dívidas do cheque especial
+    - title: Como sair das dívidas de cartão de crédito
+      payload: Como sair das dívidas de cartão de crédito
+  utter_about_loan:
+  - text: "Aqui na `Blueeve cred` temos duas modalidades de crédito.\nCrédito pessoal: Nessa modalidade você precisa passar por uma análise de renda e a partir dessa análise conseguiremos ver o quanto de crédito será aprovado para o seu perfil financeiro\nCrédito com garantia: Nessa modalidade você pode usar um bem (um carro ou uma casa) como garantia do seu empréstimo dessa forma conseguimos taxas menores"
+  utter_about_fees:
+  - text: "Te farei um resumo sobre cada uma das nossas modalidades disponíveis"
+  utter_resume_about_fees:
+  - text: "Modalidade de *empréstimo pessoal*:\nConseguimos crédito até 35 mil reais\nCom taxas a partir de 1,6% ao mês\nE parcelas em até 24x\nO dinheiro entra na sua conta em até 2 dias úteis\nModalidade de *garantia com automóvel*:\nPodemos liberar até 80% do valor avaliado do seu automovel\nE parcelas de até 60x\nE taxas a partir de 1,05% ao mês\nModalidade de *garantia de imóvel*:\nCom crédito de até 90% do valor avalidado no seu imóvel\nE taxas de 0,84% ao mês + IPCA\nE parcelas em até 240x"
+  utter_atecipate_quota:
+  - text: "Tanto para antecipar ou quitar parcelas você consegue desconto, não é maravilhoso!?\nBasta fazer a simulação na nossa plataforma, gerar os boletos e então realizar o pagamento.\n e já te conto que para parcelas em atraso você recebe uma multa então é importante manter todos os pagamentos em dia, certo?!"
+  utter_delay_quota:
+  - text: "Se você atrasou algumas parcelas fico triste por ter quebrado nosso combinado de pagar sempre em dia, para resolver esse problema você terá que pagar uma multa e pode voltar a pagar as próximas parcelas normalmente.\nCaso você precise resolver uma situação muito especifica é só entrar em contato com a nossa equipe pelo email(duvidas@blueeveecred.com.br) explicando a sua situação "
+  utter_cancel_loan:
+  - text: "Existem duas possibilidade:\n*Sua proposta ainda está em análise:*E então é bem simples, basta enviar um e-mail para duvidas@blueeveecred.com.br como 'CANCELAMENTO DE EMPRÉSTIMO EM ANÁLISE'.\n*Seu empréstimo foi aprovado ou dinheiro já caiu na sua conta:* Agora você tem até 7 dias a partir da aprovação para pedir o cancelamento sem taxas adicionais pode entrar em contato pelo telefone 0800 134 1234 de `segunda à sexta das 8h às 17h`.\nCaso já tenham passado os 7 dias você está sujeito à uma taxa de 0,89% por dia."
+  utter_alter_date:
+  - text: "Infelizmente, depois que seu contrato for assinado não há opção de modificar a data de vencimento, por isso minha dica é que você escolha com muita calma e tenha certeza da sua escolha, tá bom?!"
+  utter_loan_options:
+  - text: "Atualmente trabalhamos com essas modalidades, sobre qual você gostaria de saber um pouco mais?"
+    buttons:
+    - title: Empréstimo pessoal
+      payload: Empréstimo pessoal
+    - title: Empréstimo com garantia de imóvel
+      payload: Empréstimo com garantia de imóvel
+    - title: Empréstimo com garantia de automóvel
+      payload: Empréstimo com garantia de automóvel
+  utter_property_loan:
+  - text: "Essa modalidade é realmente incrível, dá uma olhada!!\nNesse modelo você utiliza uma propriedade como garantia do pagamento, por se tratar de um tipo de crédito no qual há uma garantia, uma das vantagens desse formato é a taxa de juros. Isso porque, nesse caso, a chance de inadimplência é menor, por isso, tende a ter juros mais baixos também. Seu crédito liberado pode ser de até *90%* do valor do seu patrimônio e você pode pagar em até *240 meses* e além de tudo isso nós oferecemos um time de consultores focados em entender suas necessidades e as melhores condições para você."
+  utter_personal_loan:
+  - text: "Nessa modalidade você não precisa dar nenhum bem como garantia! o crédito será avaliado de acordo com sua comprovação de renda. A partir da análise do seu perfil financeiro você pode ter até 35 mil reais de crédito liberados e pode pagar em até 24 meses.\n\nEsse empréstimo é mais recomendado se você precisa pegar pouco dinheiro emprestado e não tem nenhum patrimônio no seu nome para dar como garantia.\n\nCaso você possua algum bem (uma casa ou um carro) no seu nome pode conferir os empréstimos com garantia, que tem taxas muito menores `#DicadaMaria`"
+    buttons:
+    - title: Me explica sobre o empréstimo com garantia de imóvel
+      payload: Me explica sobre o empréstimo com garantia de imóvel
+    - title: Me explica sobre o empréstimo com garantia de automóvel
+      payload: Me explica sobre o empréstimo com garantia de automóvel
+  utter_car_loan:
+  - text: "Essa modalidade é perfeita se você possui um *automóvel quitado em seu nome*, Saca só!\n\nVocê utiliza um automóvel como garantia do pagamento, por se tratar de um tipo de crédito no qual há uma garantia os juros são menores no que o empréstimo consignado. E não precisa se preocupar seu carro é nossa garantia, mas você pode continuar a usá-lo e ainda usuafruir de melhores condições de valores e juros. Você pode receber até *80%* do valor avaliado do seu automóvel e tem até *60 meses*. Não é incrível?! `#LembretedaMaria :` Somente são aceitos carros de até 19 anos e veículos utilitários com até 8 anos, quitados e no nome de quem solicita o crédito. E aí? Tá esperando o que pra fazer sua simulação?."
+  utter_cet_iof_tax:
+  - text: "Te explico agora mesmo todo o conceito de CET e IOF!\n\nA sigla *CET* significa *Custo Efetivo Total* e é de fato uma taxa percentual somatória que o cliente terá de todos os custos em uma operação de empréstimo. A mesma consta na legislação do Banco Central à partir da Resolução 3.517, e passou a constar em todas as transações financeiras realizadas a partir de 03.03.2008.\n\nEm resumo o *CET* é a porcetagem de todo o gasto que você vai ter com seu empréstimo, então não perde esse número de vista tá legal?! #DicadaMaria\n\nJá o *IOF* é o *Imposto sobre Operações de Crédito, Câmbio e Seguros*. É um imposto que incide sobre qualquer tipo de operação de crédito, câmbio, seguro ou operações relacionadas a títulos e valores mobiliários. Ele foi criado principalmente para servir como instrumento regulatório da economia, pois dessa forma é possível o governo ter ideia de como está a oferta e a demanda de crédito no país.\n\nEm outras palavras, o Poder Executivo usa essa receita para “medir a febre”: quanto mais IOF for arrecadado, maior foi o volume de operações financeiras realizadas no período."
+  utter_loan_for_negative:
+  - text: "Não, atualmente a `Blueevee cred` não oferece empréstimo para pessoas com restrição no CPF no Boa Vista ou Serasa."
+  utter_renegotiate_debts:
+  - text: "Renegociar dívidas é, sem dúvida, um dos principais caminhos para conquistar a tão sonhada saúde financeira. A renegociação pode ser ser feita diretamente com o credor, seja em feirões para limpar o nome ou por meio do refinanciamento de dívida - e portabilidade de uma instituição para outra. A dica mais importante é procurar canais oficiais do agente financeiro em que o crédito foi contratado - *até para evitar cair em fraudes*. Um ponto positivo é que, na maioria dos casos, é possível fazer a solicitação de renegociação de forma totalmente online, Antes de renegociar, no entanto, é importante tentar entender o cenário em que está inserido e qual será a melhor maneira de fazer isso. Isso porque o não pagamento da dívida renegociada com o credor pode ser ainda pior para você. Fique sempre atento e mantenha seu planejamento em dia para não se perder nas dívidas `#DicasdaMaria`"
+  utter_special_check_debts:
+  - text: "Aquele crédito pré-aprovado que fica disponível na sua conta corrente pode custar *caro* para a sua saúde financeira. Isso porque o cheque especial possui a maior taxa de juros do mercado, chegando a mais de 300% por ano segundo o Banco Central. A facilidade do acesso a esse crédito e a falta de informações sobre as condições para esse tipo de empréstimo fazem com que milhares de pessoas fiquem mau endividadas. Para sair da dívida do cheque especial é recomendado conversar com o seu gerente e tentar negociar a melhor forma de pagamento.Se não for possível quitar o valor completo da dívida, é sempre válido buscar outras modalidades no mercado com juros menores e que podem ser usadas para organizar as finanças e sair da bola de neve do cheque especial. Assim, o consumidor troca a dívida cara por outra mais barata e isso pode ser a salvação da sua saúde financeira. `#DicasdaMaria`"
+  utter_credit_card_debts:
+  - text: "A dívida de cartão de crédito é uma das mais caras do mercado - *atrás apenas do cheque especial*. Os juros, por exemplo, chegam a mais de 280% ao ano de acordo com o Banco Central. Analisando esses dados, não restam dúvidas: o pagamento desse tipo de dívida deve ser uma *prioridade* no orçamento.\n\nNegocie com a operadora de cartão de crédito e busque uma alternativa de pagamento que caiba no seu bolso. O agente financeiro tem tanto interesse quanto você na quitação do débito e costuma facilitar o pagamento, seja com parcelas mais flexíveis ou com a redução da taxa de juros. Mas, antes, é importante entender quanto do seu orçamento mensal pode ser comprometido com o pagamento da dívida. Com isso, é possível fazer uma proposta ao banco que seja vantajosa para ambos.\n\nTambém é válido fazer simulações de crédito em diferentes agentes financeiros para identificar se existem propostas mais adequadas à sua realidade financeira. Muitas vezes, é possível encontrar ofertas com juros menores e melhores condições de pagamento. Então comece fazendo um planejamento de quitação dessa dívida `#DicasdaMaria`"
+  utter_simulate_loan:
+  - text: "Você gostaria de fazer uma simulação para qual dessas modalidades?"
+    buttons:
+    - title: Empréstimo pessoal
+      payload: Empréstimo pessoal
+    - title: Empréstimo com garantia de imóvel
+      payload: Empréstimo com garantia de imóvel
+    - title: Empréstimo com garantia de automóvel
+      payload: Empréstimo com garantia de automóvel
+  utter_ask_property_loan:
+  - text: "Me fala um valor aproximado que represente o valor do seu imóvel? *(Entre 10000 e 3000000 )*\n\nLembrando que faremos uma avaliação final, por isso só precisa ser valor aproximado"
+  utter_ask_property_loan_term:
+  - text: "Em quantas parcelas gostaria de pagar?*(Escolha parcelas entre 2 e 240)*"
+  utter_ask_car_loan:
+  - text: "Quanto quer emprestado?"
+  utter_ask_car_loan_term:
+  - text: "Quer pagar em quantas parcelas?"
+  utter_ask_personal_loan:
+  - text: "Quanto você quer emprestado? *(Não esqueça de escolher um valor entre 1000 e 35000)*"
+  utter_ask_personal_loan_term:
+  - text: "Em quantas parcelas prefere pagar?*(Escolha parcelas entre 2 e 24)*"
+  utter_ask_name:
+  - text: "Me conta seu nome completo? Do jeitinho que está escrito no RG viu?!"
+  utter_ask_cpf:
+  - text: "Qual o seu CPF?"
+  utter_ask_marital_status:
+  - text: "E o estado civil?"
+    buttons:
+    - title: Solteriro(a)
+      payload: Solteriro(a)
+    - title: Casado(a)
+      payload: Casado(a)
+    - title: Divorciado(a)
+      payload: Divorciado(a)
+    - title: Viúvo(a)
+      payload: Viúvo(a)
+  utter_ask_birth_date:
+  - text: "Me fala a sua data de nascimeto:(no formato *dd/mm/aaaa* por favor)"
+  utter_ask_occupation:
+  - text: "Qual a sua ocupação?"
+    buttons:
+    - title: Funcionário Público
+      payload: Funcionário Público
+    - title: Assalariado(CLT)
+      payload: Assalariado(CLT)
+    - title: Autônomo
+      payload: Autônomo
+    - title: Empresário ou PJ
+      payload: Empresário ou PJ
+    - title: Profissional Liberal
+      payload: Profissional Liberal
+    - title: Aposentado ou Pensionista
+      payload: Aposentado ou Pensionista
+    - title: Desempregado
+      payload: Desempregado
+  utter_ask_phone_number:
+  - text: "Me diz um telefone para contato?"
+  utter_ask_email:
+  - text: "Me conta o seu melhor email?"
+  utter_wrong_phone:
+  - text: Você deve informar um telefone válido. Use o formato (DDD) 00000-0000
+  utter_wrong_email:
+  - text: Parece que esse email está incorreto, confere pra mim e digita novamente, por favor.
+  utter_wrong_cpf:
+  - text: Esse cpf parece incorreto, tente usar esse formato 000.000.000-00.
+  utter_wrong_loan:
+  - text: "Preciso que escolha um valor entre a faixa indicada."
+  utter_after_resume:
+  - text: "Suas informações estão corretas?"
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+  utter_resume_personal_loan:
+  - text: "*Valor do empréstimo:* {personal_loan}\n*Prazo:* {personal_loan_term}\n*Nome:* {name}\n*Cpf:* {cpf}\n*Estado civil:* {marital_status}\n*Data de nascimento:* {birth_date}\n*Ocupação* {occupation}\n*Telefone:* {phone_number}\n*Email:* {email}."
+  utter_resume_property_loan:
+  - text: "*Valor do empréstimo:* {property_loan}\n*Prazo:* {property_loan_term}\n*Nome:* {name}\n*Cpf:* {cpf}\n*Estado civil:* {marital_status}\n*Data de nascimento:* {birth_date}\n*Ocupação* {occupation}\n*Telefone:* {phone_number}\n*Email:* {email}."
+  utter_resume_car_loan:
+  - text: "*Valor do empréstimo:* {car_loan}\n*Prazo:* {car_loan_term}\n*Nome:* {name}\n*Cpf:* {cpf}\n*Estado civil:* {marital_status}\n*Data de nascimento:* {birth_date}\n*Ocupação* {occupation}\n*Telefone:* {phone_number}\n*Email:* {email}."
+  utter_correct_loan:
+  - text: "Qual informação você gostaria de corrigir?"
+    buttons:
+    - title: Empréstimo
+      payload: Empréstimo
+    - title: Prazo
+      payload: Prazo
+    - title: Nome
+      payload: Nome
+    - title: Cpf
+      payload: Cpf
+    - title: Estado civil
+      payload: Estado civil
+    - title: Data de nascimento
+      payload: Data de nascimento
+    - title: Ocupação
+      payload: Ocupação
+    - title: Telefone
+      payload: Telefone
+    - title: Email
+      payload: Email
+  utter_finished_loan_simulate:
+  - text: "Certo!! Enviarei sua proposta para análise interna, fica de olho no seu email, em 2 dias úteis te mandaremos a resposta sobre o seu empréstimo."
+  utter_wrong_birth_date:
+  - text: "Você precisa ser maior de 18 anos, e informar a data no formato correto!"
+  utter_feedback:
+  - text: Até mais e obrigada pelo feedback! Estou buscando melhorar para te atender da melhor forma. Caso tenha mais alguma dúvida volte a falar comigo. 🤗
+  utter_ask_help:
+  - text: Posso te ajudar em algo mais?
+    buttons:
+    - title: Sim
+      payload: Sim
+    - title: Não
+      payload: Não
+  utter_ask_user_feedback:
+  - text: "Como você avalia o meu atendimento? escolha uma das opções abaixo:"
+    buttons:
+    - title: AMEI
+      payload: AMEI
+    - title: BOM
+      payload: BOM
+    - title: REGULAR
+      payload: REGULAR
+    - title: não gostei
+      payload: não gostei
+    - title: PÉSSIMO
+      payload: PÉSSIMO
+
+forms:
+  simulate_personal_loan_form:
+    personal_loan:
+      - type: from_text
+    personal_loan_term:
+      - type: from_text
+  simulate_property_loan_form:
+    property_loan:
+      - type: from_text
+    property_loan_term:
+      - type: from_text
+  simulate_car_loan_form:
+    car_loan:
+      - type: from_text
+    car_loan_term:
+      - type: from_text
+  simulate_loan_form:
+    name:
+      - type: from_text
+    cpf:
+      - type: from_text
+    marital_status:
+      - type: from_text
+    birth_date:
+      - type: from_text
+    occupation:
+      - type: from_text
+    phone_number:
+      - type: from_text
+    email:
+      - type: from_text
+  user_feedback_form:
+    user_feedback:
+      - type: from_text
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
