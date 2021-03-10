@@ -1,0 +1,11 @@
+# vsCode
+.vscode
+./.vscode
+
+# Virtualenv
+./rasaV2
+/rasaV2
+rasaV2
+
+# credentials
+credentials.yml

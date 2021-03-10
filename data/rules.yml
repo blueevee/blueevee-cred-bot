@@ -1,0 +1,18 @@
+version: "2.0"
+
+rules:
+
+- rule: Sempre cumprimentar quando for cumprimentado
+  steps:
+  - intent: greet
+  - action: action_welcome
+
+- rule: Sempre ir pro feedback quando receber tchau
+  steps:
+  - intent: goodbye
+  - action: user_feedback_form
+  - active_loop: user_feedback_form
+  - slot_was_set:
+    - user_feedback: "amei"
+  - active_loop: null
+  - action: utter_feedback
