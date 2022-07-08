@@ -2,6 +2,13 @@ version: "2.0"
 
 nlu:
 
+- intent: rpg
+  examples: |
+    - RPG
+    - Quando vai ter rpg
+    - Quantos dias faltam pro RPG
+    - dia do rpg
+
 - intent: loan
   examples: |
     - Empréstimo
@@ -85,6 +92,7 @@ nlu:
     - olar
     - Bom dia
     - Boa tarde
+    - start
  
 - intent: goodbye
   examples: |

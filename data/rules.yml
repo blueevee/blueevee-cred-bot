@@ -7,6 +7,12 @@ rules:
   - intent: greet
   - action: action_welcome
 
+- rule: QUANTO TEMPO PRO RPG
+  steps:
+  - intent: rpg
+  - action: action_rpg_day
+  - action: action_choose_message_rpg
+
 - rule: Sempre ir pro feedback quando receber tchau
   steps:
   - intent: goodbye

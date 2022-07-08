@@ -1,451 +1,458 @@
 version: "2.0"
 
+
 stories:
 
-- story: INICIANDO FLUXO
+- story: QUANTO TEMPO PRO RPG
   steps:
-  - intent: greet
-  - checkpoint: more_help
-  - action: action_welcome
+  - intent: rpg
+  - action: action_rpg_day
+  - action: action_choose_message_rpg
 
-- story: COMO O EMPÉSTIMO FUNCIONA
-  steps:
-  - intent: how_loan_works
-  - action: utter_about_loan
-  - checkpoint: to_feedback
+# - story: INICIANDO FLUXO
+#   steps:
+#   - intent: greet
+#   - checkpoint: more_help
+#   - action: action_welcome
 
-- story: QUAIS AS TAXAS / QUANTO CONSIGO CONTRATAR
-  steps:
-  - intent: about_fees
-  - action: utter_about_fees
-  - action: utter_resume_about_fees
-  - checkpoint: to_feedback
+# - story: COMO O EMPÉSTIMO FUNCIONA
+#   steps:
+#   - intent: how_loan_works
+#   - action: utter_about_loan
+#   - checkpoint: to_feedback
 
-- story: ANTECIPAR PARCELAS
-  steps:
-  - intent: atecipate_quota
-  - action: utter_atecipate_quota
-  - checkpoint: to_feedback
+# - story: QUAIS AS TAXAS / QUANTO CONSIGO CONTRATAR
+#   steps:
+#   - intent: about_fees
+#   - action: utter_about_fees
+#   - action: utter_resume_about_fees
+#   - checkpoint: to_feedback
 
-- story: ATRASAR PARCELAS
-  steps:
-  - intent: delay_quota
-  - action: utter_delay_quota
-  - checkpoint: to_feedback
+# - story: ANTECIPAR PARCELAS
+#   steps:
+#   - intent: atecipate_quota
+#   - action: utter_atecipate_quota
+#   - checkpoint: to_feedback
 
-- story: CANCELAR O EMPRÉSTIMO
-  steps:
-  - intent: cancel_loan
-  - action: utter_cancel_loan
-  - checkpoint: to_feedback
+# - story: ATRASAR PARCELAS
+#   steps:
+#   - intent: delay_quota
+#   - action: utter_delay_quota
+#   - checkpoint: to_feedback
 
-- story: ALTERAR DATA DAS PARCELAS
-  steps:
-  - intent: alter_date
-  - action: utter_alter_date
-  - checkpoint: to_feedback
+# - story: CANCELAR O EMPRÉSTIMO
+#   steps:
+#   - intent: cancel_loan
+#   - action: utter_cancel_loan
+#   - checkpoint: to_feedback
 
-- story: OPÇÕES DE EMPRÉSTIMO
-  steps:
-  - intent: loan_options
-  - action: utter_loan_options
+# - story: ALTERAR DATA DAS PARCELAS
+#   steps:
+#   - intent: alter_date
+#   - action: utter_alter_date
+#   - checkpoint: to_feedback
 
-- story: EMPRÉSTIMO DE IMÓVEL
-  steps:
-  - intent: property_loan
-  - action: utter_property_loan
-  - checkpoint: to_feedback
+# - story: OPÇÕES DE EMPRÉSTIMO
+#   steps:
+#   - intent: loan_options
+#   - action: utter_loan_options
 
-- story: EMPRÉSTIMO PESSOAL
-  steps:
-  - intent: personal_loan
-  - action: utter_personal_loan
-  - checkpoint: to_feedback
+# - story: EMPRÉSTIMO DE IMÓVEL
+#   steps:
+#   - intent: property_loan
+#   - action: utter_property_loan
+#   - checkpoint: to_feedback
 
-- story: EMPRÉSTIMO DE AUTOMÓVEL
-  steps:
-  - intent: car_loan
-  - action: utter_car_loan
-  - checkpoint: to_feedback
+# - story: EMPRÉSTIMO PESSOAL
+#   steps:
+#   - intent: personal_loan
+#   - action: utter_personal_loan
+#   - checkpoint: to_feedback
 
-- story: EXPLICANDO CET E IOF
-  steps:
-  - intent: cet_iof_tax
-  - action: utter_cet_iof_tax
-  - checkpoint: to_feedback
+# - story: EMPRÉSTIMO DE AUTOMÓVEL
+#   steps:
+#   - intent: car_loan
+#   - action: utter_car_loan
+#   - checkpoint: to_feedback
 
-- story: EMPRÉSTIMO PARA NEGATIVADOS
-  steps:
-  - intent: loan_for_negative
-  - action: utter_loan_for_negative
-  - checkpoint: to_feedback
+# - story: EXPLICANDO CET E IOF
+#   steps:
+#   - intent: cet_iof_tax
+#   - action: utter_cet_iof_tax
+#   - checkpoint: to_feedback
 
-- story: DICAS PARA SAIR DAS DIVIDAS
-  steps:
-  - intent: debts
-  - action: utter_debts
+# - story: EMPRÉSTIMO PARA NEGATIVADOS
+#   steps:
+#   - intent: loan_for_negative
+#   - action: utter_loan_for_negative
+#   - checkpoint: to_feedback
 
-- story: COMO RENEGOCIAR DÍVIDAS
-  steps:
-  - intent: renegotiate_debts
-  - action: utter_renegotiate_debts
-  - checkpoint: to_feedback
+# - story: DICAS PARA SAIR DAS DIVIDAS
+#   steps:
+#   - intent: debts
+#   - action: utter_debts
 
-- story: COMO SAIR DO CHEQUE ESPECIAL
-  steps:
-  - intent: special_check_debts
-  - action: utter_special_check_debts
-  - checkpoint: to_feedback
+# - story: COMO RENEGOCIAR DÍVIDAS
+#   steps:
+#   - intent: renegotiate_debts
+#   - action: utter_renegotiate_debts
+#   - checkpoint: to_feedback
 
-- story: COMO SAIR DAS DÍVIDAS DO CARTÃO
-  steps:
-  - intent: credit_card_debts
-  - action: utter_credit_card_debts
-  - checkpoint: to_feedback
+# - story: COMO SAIR DO CHEQUE ESPECIAL
+#   steps:
+#   - intent: special_check_debts
+#   - action: utter_special_check_debts
+#   - checkpoint: to_feedback
+
+# - story: COMO SAIR DAS DÍVIDAS DO CARTÃO
+#   steps:
+#   - intent: credit_card_debts
+#   - action: utter_credit_card_debts
+#   - checkpoint: to_feedback
 
 ################################################## [INÍCIO] SIMULAÇÃO DE EMPRÉSTIMO
 
-- story: SIMULAR EMPRÉSTIMO
-  steps:
-  - intent: simulate_loan
-  - action: utter_simulate_loan
-  - checkpoint: loan_options
+# - story: SIMULAR EMPRÉSTIMO
+#   steps:
+#   - intent: simulate_loan
+#   - action: utter_simulate_loan
+#   - checkpoint: loan_options
 
 ################################## [INÍCIO] EMPRÉSTIMO PESSOAL
-- story: ESCOLHA DE EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: loan_options
-  - intent: personal_loan
-  - checkpoint: check_review_personal_loan
-  - action: simulate_personal_loan_form
-  - active_loop: simulate_personal_loan_form
-  - slot_was_set:
-    - personal_loan_term: "10"
-    - personal_loan: "10000"
-  - active_loop: null
-  - action: simulate_loan_form
-  - active_loop: simulate_loan_form
-  - slot_was_set:
-    - name: "sample name"
-    - cpf: "sample cpf"
-    - marital_status: "sample status"
-    - birth_date: "sample date"
-    - occupation: "sample occupation"
-    - phone_number: "sample phone"
-    - email: "smple email"
-  - active_loop: null
-  - action: utter_resume_personal_loan
-  - action: utter_after_resume
-  - checkpoint: check_correct_personal_loan
+# - story: ESCOLHA DE EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: loan_options
+#   - intent: personal_loan
+#   - checkpoint: check_review_personal_loan
+#   - action: simulate_personal_loan_form
+#   - active_loop: simulate_personal_loan_form
+#   - slot_was_set:
+#     - personal_loan_term: "10"
+#     - personal_loan: "10000"
+#   - active_loop: null
+#   - action: simulate_loan_form
+#   - active_loop: simulate_loan_form
+#   - slot_was_set:
+#     - name: "sample name"
+#     - cpf: "sample cpf"
+#     - marital_status: "sample status"
+#     - birth_date: "sample date"
+#     - occupation: "sample occupation"
+#     - phone_number: "sample phone"
+#     - email: "smple email"
+#   - active_loop: null
+#   - action: utter_resume_personal_loan
+#   - action: utter_after_resume
+#   - checkpoint: check_correct_personal_loan
 
-- story: ❌ DADOS INCORRETOS ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_personal_loan
-  - intent: deny
-  - action: utter_correct_loan
-  - checkpoint: check_correct_data_personal_loan
+# - story: ❌ DADOS INCORRETOS ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_personal_loan
+#   - intent: deny
+#   - action: utter_correct_loan
+#   - checkpoint: check_correct_data_personal_loan
 
-- story: ✏️ CORREÇÃO DO VALOR DO EMPRÉSTIMO ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_data_personal_loan
-  - intent: loan
-  - action: action_clean_personal_loan
-  - checkpoint: check_review_personal_loan
+# - story: ✏️ CORREÇÃO DO VALOR DO EMPRÉSTIMO ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_data_personal_loan
+#   - intent: loan
+#   - action: action_clean_personal_loan
+#   - checkpoint: check_review_personal_loan
 
-- story: ✏️ CORREÇÃO DO PRAZO DO EMPRÉSTIMO ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_data_personal_loan
-  - intent: term
-  - action: action_clean_personal_loan_term
-  - checkpoint: check_review_personal_loan
+# - story: ✏️ CORREÇÃO DO PRAZO DO EMPRÉSTIMO ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_data_personal_loan
+#   - intent: term
+#   - action: action_clean_personal_loan_term
+#   - checkpoint: check_review_personal_loan
 
-- story: ✏️ CORREÇÃO DO NOME ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_data_personal_loan
-  - intent: name
-  - action: action_clean_name
-  - checkpoint: check_review_personal_loan
+# - story: ✏️ CORREÇÃO DO NOME ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_data_personal_loan
+#   - intent: name
+#   - action: action_clean_name
+#   - checkpoint: check_review_personal_loan
 
-- story: ✏️ CORREÇÃO DO CPF ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_data_personal_loan
-  - intent: cpf
-  - action: action_clean_cpf
-  - checkpoint: check_review_personal_loan
+# - story: ✏️ CORREÇÃO DO CPF ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_data_personal_loan
+#   - intent: cpf
+#   - action: action_clean_cpf
+#   - checkpoint: check_review_personal_loan
 
-- story: ✏️ CORREÇÃO DO ESTADO CIVIL ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_data_personal_loan
-  - intent: marital_status_data
-  - action: action_clean_marital_status
-  - checkpoint: check_review_personal_loan
+# - story: ✏️ CORREÇÃO DO ESTADO CIVIL ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_data_personal_loan
+#   - intent: marital_status_data
+#   - action: action_clean_marital_status
+#   - checkpoint: check_review_personal_loan
 
-- story: ✏️ CORREÇÃO DA DATA DE NASCIMENTO ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_data_personal_loan
-  - intent: birth_date
-  - action: action_clean_birth_date
-  - checkpoint: check_review_personal_loan
+# - story: ✏️ CORREÇÃO DA DATA DE NASCIMENTO ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_data_personal_loan
+#   - intent: birth_date
+#   - action: action_clean_birth_date
+#   - checkpoint: check_review_personal_loan
 
-- story: ✏️ CORREÇÃO DA OCUPAÇÃO ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_data_personal_loan
-  - intent: occupation_data
-  - action: action_clean_occupation_data
-  - checkpoint: check_review_personal_loan
+# - story: ✏️ CORREÇÃO DA OCUPAÇÃO ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_data_personal_loan
+#   - intent: occupation_data
+#   - action: action_clean_occupation_data
+#   - checkpoint: check_review_personal_loan
 
-- story: ✏️ CORREÇÃO DE TELEFONE ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_data_personal_loan
-  - intent: phone_number
-  - action: action_clean_phone_number
-  - checkpoint: check_review_personal_loan
+# - story: ✏️ CORREÇÃO DE TELEFONE ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_data_personal_loan
+#   - intent: phone_number
+#   - action: action_clean_phone_number
+#   - checkpoint: check_review_personal_loan
 
-- story: ✏️ CORREÇÃO DE EMAIL ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_data_personal_loan
-  - intent: email
-  - action: action_clean_email
-  - checkpoint: check_review_personal_loan
+# - story: ✏️ CORREÇÃO DE EMAIL ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_data_personal_loan
+#   - intent: email
+#   - action: action_clean_email
+#   - checkpoint: check_review_personal_loan
 
-- story: ✅ DADOS CORRETOS ▶️ EMPRÉSTIMO PESSOAL
-  steps:
-  - checkpoint: check_correct_personal_loan
-  - intent: affirm
-  - action: utter_finished_loan_simulate
-  - checkpoint: to_feedback
+# - story: ✅ DADOS CORRETOS ▶️ EMPRÉSTIMO PESSOAL
+#   steps:
+#   - checkpoint: check_correct_personal_loan
+#   - intent: affirm
+#   - action: utter_finished_loan_simulate
+#   - checkpoint: to_feedback
 ################################## [FIM] EMPRÉSTIMO PESSOAL
 
 ################################## [INÍCIO] EMPRÉSTIMO COM GARANTIA DE IMÓVEL
-- story: ESCOLHA DE GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: loan_options
-  - intent: property_loan
-  - checkpoint: check_review_property_loan
-  - action: simulate_property_loan_form
-  - active_loop: simulate_property_loan_form
-  - slot_was_set:
-    - property_loan: "140000"
-    - property_loan_term: "200"
-  - active_loop: null
-  - action: simulate_loan_form
-  - active_loop: simulate_loan_form
-  - slot_was_set:
-    - name: "sample name"
-    - cpf: "sample cpf"
-    - marital_status: "sample status"
-    - birth_date: "sample date"
-    - occupation: "sample occupation"
-    - phone_number: "sample phone"
-    - email: "sample email"
-  - active_loop: null
-  - action: utter_resume_property_loan
-  - action: utter_after_resume
-  - checkpoint: check_correct_property_loan
+# - story: ESCOLHA DE GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: loan_options
+#   - intent: property_loan
+#   - checkpoint: check_review_property_loan
+#   - action: simulate_property_loan_form
+#   - active_loop: simulate_property_loan_form
+#   - slot_was_set:
+#     - property_loan: "140000"
+#     - property_loan_term: "200"
+#   - active_loop: null
+#   - action: simulate_loan_form
+#   - active_loop: simulate_loan_form
+#   - slot_was_set:
+#     - name: "sample name"
+#     - cpf: "sample cpf"
+#     - marital_status: "sample status"
+#     - birth_date: "sample date"
+#     - occupation: "sample occupation"
+#     - phone_number: "sample phone"
+#     - email: "sample email"
+#   - active_loop: null
+#   - action: utter_resume_property_loan
+#   - action: utter_after_resume
+#   - checkpoint: check_correct_property_loan
 
-- story: ❌ DADOS INCORRETOS ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_property_loan
-  - intent: deny
-  - action: utter_correct_loan
-  - checkpoint: check_correct_data_property_loan
+# - story: ❌ DADOS INCORRETOS ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_property_loan
+#   - intent: deny
+#   - action: utter_correct_loan
+#   - checkpoint: check_correct_data_property_loan
 
-- story: ✏️ CORREÇÃO DO VALOR DO EMPRÉSTIMO ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_data_property_loan
-  - intent: loan
-  - action: action_clean_property_loan
-  - checkpoint: check_review_property_loan
+# - story: ✏️ CORREÇÃO DO VALOR DO EMPRÉSTIMO ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_data_property_loan
+#   - intent: loan
+#   - action: action_clean_property_loan
+#   - checkpoint: check_review_property_loan
 
-- story: ✏️ CORREÇÃO DO PRAZO DO EMPRÉSTIMO ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_data_property_loan
-  - intent: term
-  - action: action_clean_property_loan_term
-  - checkpoint: check_review_property_loan
+# - story: ✏️ CORREÇÃO DO PRAZO DO EMPRÉSTIMO ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_data_property_loan
+#   - intent: term
+#   - action: action_clean_property_loan_term
+#   - checkpoint: check_review_property_loan
 
-- story: ✏️ CORREÇÃO DO NOME ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_data_property_loan
-  - intent: name
-  - action: action_clean_name
-  - checkpoint: check_review_property_loan
+# - story: ✏️ CORREÇÃO DO NOME ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_data_property_loan
+#   - intent: name
+#   - action: action_clean_name
+#   - checkpoint: check_review_property_loan
 
-- story: ✏️ CORREÇÃO DO CPF ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_data_property_loan
-  - intent: cpf
-  - action: action_clean_cpf
-  - checkpoint: check_review_property_loan
+# - story: ✏️ CORREÇÃO DO CPF ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_data_property_loan
+#   - intent: cpf
+#   - action: action_clean_cpf
+#   - checkpoint: check_review_property_loan
 
-- story: ✏️ CORREÇÃO DO ESTADO CIVIL ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_data_property_loan
-  - intent: marital_status_data
-  - action: action_clean_marital_status
-  - checkpoint: check_review_property_loan
+# - story: ✏️ CORREÇÃO DO ESTADO CIVIL ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_data_property_loan
+#   - intent: marital_status_data
+#   - action: action_clean_marital_status
+#   - checkpoint: check_review_property_loan
 
-- story: ✏️ CORREÇÃO DA DATA DE NASCIMENTO ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_data_property_loan
-  - intent: birth_date
-  - action: action_clean_birth_date
-  - checkpoint: check_review_property_loan
+# - story: ✏️ CORREÇÃO DA DATA DE NASCIMENTO ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_data_property_loan
+#   - intent: birth_date
+#   - action: action_clean_birth_date
+#   - checkpoint: check_review_property_loan
 
-- story: ✏️ CORREÇÃO DA OCUPAÇÃO ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_data_property_loan
-  - intent: occupation_data
-  - action: action_clean_occupation_data
-  - checkpoint: check_review_property_loan
+# - story: ✏️ CORREÇÃO DA OCUPAÇÃO ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_data_property_loan
+#   - intent: occupation_data
+#   - action: action_clean_occupation_data
+#   - checkpoint: check_review_property_loan
 
-- story: ✏️ CORREÇÃO DE TELEFONE ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_data_property_loan
-  - intent: phone_number
-  - action: action_clean_phone_number
-  - checkpoint: check_review_property_loan
+# - story: ✏️ CORREÇÃO DE TELEFONE ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_data_property_loan
+#   - intent: phone_number
+#   - action: action_clean_phone_number
+#   - checkpoint: check_review_property_loan
 
-- story: ✏️ CORREÇÃO DE EMAIL ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_data_property_loan
-  - intent: email
-  - action: action_clean_email
-  - checkpoint: check_review_property_loan
+# - story: ✏️ CORREÇÃO DE EMAIL ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_data_property_loan
+#   - intent: email
+#   - action: action_clean_email
+#   - checkpoint: check_review_property_loan
 
-- story: ✅ DADOS CORRETOS ▶️ COM GARANTIA DE IMÓVEL
-  steps:
-  - checkpoint: check_correct_property_loan
-  - intent: affirm
-  - action: utter_finished_loan_simulate
-  - checkpoint: to_feedback
+# - story: ✅ DADOS CORRETOS ▶️ COM GARANTIA DE IMÓVEL
+#   steps:
+#   - checkpoint: check_correct_property_loan
+#   - intent: affirm
+#   - action: utter_finished_loan_simulate
+#   - checkpoint: to_feedback
 ################################## [FIM] EMPRÉSTIMO COM GARANTIA DE IMÓVEL
 
 ################################## [INÍCIO] EMPRÉSTIMO COM GARANTIA DE VEÍCULO
-- story: ESCOLHA DE GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: loan_options
-  - intent: car_loan
-  - checkpoint: check_review_car_loan
-  - action: simulate_car_loan_form
-  - active_loop: simulate_car_loan_form
-  - slot_was_set:
-    - car_loan: "140000"
-    - car_loan_term: "200"
-  - active_loop: null
-  - action: simulate_loan_form
-  - active_loop: simulate_loan_form
-  - slot_was_set:
-    - name: "sample name"
-    - cpf: "sample cpf"
-    - marital_status: "sample status"
-    - birth_date: "sample date"
-    - occupation: "sample occupation"
-    - phone_number: "sample phone"
-    - email: "smple email"
-  - active_loop: null
-  - action: utter_resume_car_loan
-  - action: utter_after_resume
-  - checkpoint: check_correct_car_loan
+# - story: ESCOLHA DE GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: loan_options
+#   - intent: car_loan
+#   - checkpoint: check_review_car_loan
+#   - action: simulate_car_loan_form
+#   - active_loop: simulate_car_loan_form
+#   - slot_was_set:
+#     - car_loan: "140000"
+#     - car_loan_term: "200"
+#   - active_loop: null
+#   - action: simulate_loan_form
+#   - active_loop: simulate_loan_form
+#   - slot_was_set:
+#     - name: "sample name"
+#     - cpf: "sample cpf"
+#     - marital_status: "sample status"
+#     - birth_date: "sample date"
+#     - occupation: "sample occupation"
+#     - phone_number: "sample phone"
+#     - email: "smple email"
+#   - active_loop: null
+#   - action: utter_resume_car_loan
+#   - action: utter_after_resume
+#   - checkpoint: check_correct_car_loan
 
-- story: ❌ DADOS INCORRETOS ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_car_loan
-  - intent: deny
-  - action: utter_correct_loan
-  - checkpoint: check_correct_data_car_loan
+# - story: ❌ DADOS INCORRETOS ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_car_loan
+#   - intent: deny
+#   - action: utter_correct_loan
+#   - checkpoint: check_correct_data_car_loan
 
-- story: ✏️ CORREÇÃO DO VALOR DO EMPRÉSTIMO ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_data_car_loan
-  - intent: loan
-  - action: action_clean_car_loan
-  - checkpoint: check_review_car_loan
+# - story: ✏️ CORREÇÃO DO VALOR DO EMPRÉSTIMO ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_data_car_loan
+#   - intent: loan
+#   - action: action_clean_car_loan
+#   - checkpoint: check_review_car_loan
 
-- story: ✏️ CORREÇÃO DO PRAZO DO EMPRÉSTIMO ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_data_car_loan
-  - intent: term
-  - action: action_clean_car_loan_term
-  - checkpoint: check_review_car_loan
+# - story: ✏️ CORREÇÃO DO PRAZO DO EMPRÉSTIMO ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_data_car_loan
+#   - intent: term
+#   - action: action_clean_car_loan_term
+#   - checkpoint: check_review_car_loan
 
-- story: ✏️ CORREÇÃO DO NOME ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_data_car_loan
-  - intent: name
-  - action: action_clean_name
-  - checkpoint: check_review_car_loan
+# - story: ✏️ CORREÇÃO DO NOME ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_data_car_loan
+#   - intent: name
+#   - action: action_clean_name
+#   - checkpoint: check_review_car_loan
 
-- story: ✏️ CORREÇÃO DO CPF ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_data_car_loan
-  - intent: cpf
-  - action: action_clean_cpf
-  - checkpoint: check_review_car_loan
+# - story: ✏️ CORREÇÃO DO CPF ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_data_car_loan
+#   - intent: cpf
+#   - action: action_clean_cpf
+#   - checkpoint: check_review_car_loan
 
-- story: ✏️ CORREÇÃO DO ESTADO CIVIL ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_data_car_loan
-  - intent: marital_status_data
-  - action: action_clean_marital_status
-  - checkpoint: check_review_car_loan
+# - story: ✏️ CORREÇÃO DO ESTADO CIVIL ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_data_car_loan
+#   - intent: marital_status_data
+#   - action: action_clean_marital_status
+#   - checkpoint: check_review_car_loan
 
-- story: ✏️ CORREÇÃO DA DATA DE NASCIMENTO ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_data_car_loan
-  - intent: birth_date
-  - action: action_clean_birth_date
-  - checkpoint: check_review_car_loan
+# - story: ✏️ CORREÇÃO DA DATA DE NASCIMENTO ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_data_car_loan
+#   - intent: birth_date
+#   - action: action_clean_birth_date
+#   - checkpoint: check_review_car_loan
 
-- story: ✏️ CORREÇÃO DA OCUPAÇÃO ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_data_car_loan
-  - intent: occupation_data
-  - action: action_clean_occupation_data
-  - checkpoint: check_review_car_loan
+# - story: ✏️ CORREÇÃO DA OCUPAÇÃO ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_data_car_loan
+#   - intent: occupation_data
+#   - action: action_clean_occupation_data
+#   - checkpoint: check_review_car_loan
 
-- story: ✏️ CORREÇÃO DE TELEFONE ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_data_car_loan
-  - intent: phone_number
-  - action: action_clean_phone_number
-  - checkpoint: check_review_car_loan
+# - story: ✏️ CORREÇÃO DE TELEFONE ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_data_car_loan
+#   - intent: phone_number
+#   - action: action_clean_phone_number
+#   - checkpoint: check_review_car_loan
 
-- story: ✏️ CORREÇÃO DE EMAIL ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_data_car_loan
-  - intent: email
-  - action: action_clean_email
-  - checkpoint: check_review_car_loan
+# - story: ✏️ CORREÇÃO DE EMAIL ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_data_car_loan
+#   - intent: email
+#   - action: action_clean_email
+#   - checkpoint: check_review_car_loan
 
-- story: ✅ DADOS CORRETOS ▶️ COM GARANTIA DE VEÍCULO
-  steps:
-  - checkpoint: check_correct_car_loan
-  - intent: affirm
-  - action: utter_finished_loan_simulate
-  - checkpoint: to_feedback
+# - story: ✅ DADOS CORRETOS ▶️ COM GARANTIA DE VEÍCULO
+#   steps:
+#   - checkpoint: check_correct_car_loan
+#   - intent: affirm
+#   - action: utter_finished_loan_simulate
+#   - checkpoint: to_feedback
 ################################## [FIM] EMPRÉSTIMO COM GARANTIA DE VEÍCULO
 
 ################################################## [FIM] SIMULAÇÃO DE EMPRÉSTIMO
-- story: GOSTARIA DE ALGO MAIS?
-  steps:
-  - checkpoint: to_feedback
-  - action: utter_ask_help
-  - checkpoint: check_help
+# - story: GOSTARIA DE ALGO MAIS?
+#   steps:
+#   - checkpoint: to_feedback
+#   - action: utter_ask_help
+#   - checkpoint: check_help
 
-- story: CONTINUAR NA CONVERSA
-  steps:
-  - checkpoint: check_help
-  - intent: affirm
-  - checkpoint: more_help
+# - story: CONTINUAR NA CONVERSA
+#   steps:
+#   - checkpoint: check_help
+#   - intent: affirm
+#   - checkpoint: more_help
 
-- story: IR PARA O FEEDBACK
-  steps:
-  - checkpoint: check_help
-  - intent: deny
-  - action: user_feedback_form
-  - active_loop: user_feedback_form
-  - slot_was_set:
-    - user_feedback: "amei"
-  - active_loop: null
-  - action: utter_feedback
+# - story: IR PARA O FEEDBACK
+#   steps:
+#   - checkpoint: check_help
+#   - intent: deny
+#   - action: user_feedback_form
+#   - active_loop: user_feedback_form
+#   - slot_was_set:
+#     - user_feedback: "amei"
+#   - active_loop: null
+#   - action: utter_feedback

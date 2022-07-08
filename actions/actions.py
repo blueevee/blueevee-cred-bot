@@ -10,6 +10,45 @@ import pytz
 
 
 
+class ActionRPG(Action):
+    def name(self) -> Text:
+        return "action_rpg_day"
+
+    def run(self, dispatcher: CollectingDispatcher, 
+        tracker: Tracker, 
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        weekday = dtime.today().weekday()
+        day_order = [4,3,2,1,0,6,5]
+
+        return [
+            SlotSet('days_remaining', day_order[weekday]),
+            SlotSet('today_hour', dtime.today().hour),
+            SlotSet('today_minute', dtime.today().minute),
+            SlotSet('today_second', dtime.today().second)
+            ]
+class ActionMessageRPG(Action):
+    def name(self) -> Text:
+        return "action_choose_message_rpg"
+
+    def run(self, dispatcher: CollectingDispatcher, 
+        tracker: Tracker, 
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        RPG_HOUR = 20
+        days_remaining = tracker.get_slot('days_remaining')
+
+        if days_remaining == 1:
+            return dispatcher.utter_message(template="utter_2")
+        elif days_remaining == 0:
+            if dtime.today().hour < RPG_HOUR:
+                return dispatcher.utter_message(template="utter_4")
+            else:
+                return dispatcher.utter_message(template="utter_5")
+
+        elif days_remaining < 5:
+            return dispatcher.utter_message(template="utter_1")
+        else:
+            return dispatcher.utter_message(template="utter_3")
+
 class ActionWelcome(Action):
     def name(self) -> Text:
         return "action_welcome"

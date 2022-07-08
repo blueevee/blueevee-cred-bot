@@ -22,9 +22,12 @@ actions:
   - action_clean_property_loan_term
   - action_clean_car_loan
   - action_clean_car_loan_term
+  - action_rpg_day
+  - action_choose_message_rpg
 entities:
   - marital_status
 intents:
+  - rpg
   - greet
   - goodbye
   - affirm
@@ -112,36 +115,80 @@ slots:
       - não gostei
       - péssimo
     influence_conversation: true
+  days_remaining:
+    type: text
+    influence_conversation: false
+  today_hour:
+    type: text
+    influence_conversation: false
+  today_minute:
+    type: text
+    influence_conversation: false
+  today_second:
+    type: text
+    influence_conversation: false
 
 responses:
   utter_default:
-  - text: "Eu não sei se consigo responder o que você disse, que tal perguntar de outra forma?"
-  - text: "Acho que não consegui entender  direito. Posso te ajudar com um desses tópicos:"
-    buttons:
-    - title: Como funciona o empréstimo
-      payload: Como funciona o empréstimo
-    - title: Até quanto eu posso contratar e quais são as taxas?
-      payload: Até quanto eu posso contratar e quais são as taxas?
-    - title: O que acontece se eu antecipar parcelas?
-      payload: O que acontece se eu antecipar parcelas?
-    - title: Atrasei algumas parcelas, e agora?
-      payload: Atrasei algumas parcelas, e agora?
-    - title: Como eu cancelar meu empréstimo
-      payload: Como eu cancelar meu empréstimo
-    - title: Posso alterar o valor do meu empréstimo?
-      payload: Posso alterar o valor do meu empréstimo?
-    - title: Quais opções para empréstimo estão disponíveis
-      payload: Quais opções para empréstimo estão disponíveis
-    - title: O que é CET e taxa IOF?
-      payload: O que é CET e taxa IOF?
-    - title: Fazem empréstimo para negativados?
-      payload: Fazem empréstimo para negativados?
-    - title: Quero simular meu empréstimo
-      payload: Quero simular meu empréstimo
-    - title: Dicas para lidar com dívidas
-      payload: Dicas para lidar com dívidas
-    - title: Quero falar com um humano
-      payload: Quero falar com um humano
+  - text: "Para de graça comigo!"
+  - text: "Eu apenas aviso sobre o RPG!"
+  utter_1:
+  - text: "Ainda faltam {days_remaining} dias pro rpg, 😣😭😭, passa logo semana"
+  - text: "Tá quase, faltam {days_remaining} dias pro RPG!"
+  utter_2:
+  - text: "É AMANHAAAAAAAAAAAAAAA🎆🎈🎉"
+  - text: "Pode comprar os lanche já, é amanha!!!! 💘😎💘"
+    custom:
+      animation: "https://media.giphy.com/media/blSTtZehjAZ8I/giphy.gif"
+  utter_3:
+  - text: "JÁ PASSOU 😥😪, agora temos que esperar mais {days_remaining} dias"
+    custom:
+      animation: "https://media.giphy.com/media/WrrRlXD53izPXRyi9i/giphy.gif"
+  utter_4:
+  - text: "🎇 É HOJEEEEEEEEEEE!!!!! FALTAM {today_hour} horas, {today_minute} minutos e {today_second} segundos"
+    custom:
+      animation: "https://media.giphy.com/media/C7gCFPxrXDMY3M4yYj/giphy.gif"
+  - text: "🎇 É HOJEEEEEEEEEEE!!!!! FALTAM {today_hour} horas, {today_minute} minutos e {today_second} segundos"
+    custom:
+      animation: "https://media.giphy.com/media/LL9Q6zAYgW7UQ0UEHH/giphy.gif"
+  utter_5:
+  - text: "TÁ FAZENDO O QUE AQUI????? VA PRO DISCORD QUE JÁ COMEÇOU"
+    custom:
+      animation: "https://media.giphy.com/media/5xtDarpTZP1hgRgReLK/giphy.gif"
+  - text: "TÁ FAZENDO O QUE AQUI????? VA PRO DISCORD QUE JÁ COMEÇOU"
+    custom:
+      animation: "https://media.giphy.com/media/y2J2hwdC4gS7S/giphy.gif"
+
+
+
+  # utter_default:
+  # - text: "Eu não sei se consigo responder o que você disse, que tal perguntar de outra forma?"
+  # - text: "Acho que não consegui entender  direito. Posso te ajudar com um desses tópicos:"
+  #   buttons:
+  #   - title: Como funciona o empréstimo
+  #     payload: Como funciona o empréstimo
+  #   - title: Até quanto eu posso contratar e quais são as taxas?
+  #     payload: Até quanto eu posso contratar e quais são as taxas?
+  #   - title: O que acontece se eu antecipar parcelas?
+  #     payload: O que acontece se eu antecipar parcelas?
+  #   - title: Atrasei algumas parcelas, e agora?
+  #     payload: Atrasei algumas parcelas, e agora?
+  #   - title: Como eu cancelar meu empréstimo
+  #     payload: Como eu cancelar meu empréstimo
+  #   - title: Posso alterar o valor do meu empréstimo?
+  #     payload: Posso alterar o valor do meu empréstimo?
+  #   - title: Quais opções para empréstimo estão disponíveis
+  #     payload: Quais opções para empréstimo estão disponíveis
+  #   - title: O que é CET e taxa IOF?
+  #     payload: O que é CET e taxa IOF?
+  #   - title: Fazem empréstimo para negativados?
+  #     payload: Fazem empréstimo para negativados?
+  #   - title: Quero simular meu empréstimo
+  #     payload: Quero simular meu empréstimo
+  #   - title: Dicas para lidar com dívidas
+  #     payload: Dicas para lidar com dívidas
+  #   - title: Quero falar com um humano
+  #     payload: Quero falar com um humano
   utter_debts:
   - text: "Tenho dicas para te ajudar a fugir das dívidas, com qual delas posso te ajudar?"
     buttons:
